@@ -7,9 +7,11 @@ const Home = () => {
     const {mode} = useContext(ModeContext);
 
   return (
-    <div className={`${mode === 'dark' ? `bg-black text-white` : `bg-gray-200 text-black`} h-[100vh]`}>
+    // <div className={`${mode === 'dark' ? `bg-[black] text-white` : `bg-gray-200 text-black`} h-[100vh]`}>
             
-    </div>
+    // </div>
+
+    <div></div>
   )
 }
 

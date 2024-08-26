@@ -3,12 +3,16 @@ import './App.css'
 import Home from './pages/Home'
 import Resources from './pages/Resources';
 import Header from './components/Header'
+import { ModeContext } from './components/ModeContext';
+import { useContext } from 'react';
 
 function App() {
 
+  const {mode} = useContext(ModeContext);
+
   return (
     <Router >
-      <div className="py-4 px-2">
+      <div  className={`${mode === 'dark' ? `bg-[#181818] text-white` : `bg-gray-200 text-black`} py-4 px-3 h-[100vh]`}>
         <Header />
         <main className="r">
           <Routes>

@@ -30,11 +30,11 @@ const { mode, toggleMode } = useContext(ModeContext);
       <div className="right flex items-center gap-2">
       <button onClick={toggleMode}> <div className="dark-light hover:cursor-pointer w-8 h-8 flex justify-center items-center rounded-[50%] bg-gray-300">
                 <CiLight className={`${mode === 'dark' ? `hidden` : `block`}`}/>
-                <MdDarkMode  className={`${mode === 'light' ? `hidden` : `block`}`}/>
+                <MdDarkMode  className={`${mode === 'light' ? `hidden` : `block text-black`}`}/>
         </div></button>
         <div className="noti w-8 h-8 hover:cursor-pointer flex justify-center items-center rounded-[50%] bg-gray-300 relative">
             <span className="bell">
-            <IoMdNotificationsOutline size={22}/>
+            <IoMdNotificationsOutline className={`${mode === 'light' ? `` : `block text-black`}`} size={22}/>
             </span>
             <span className="bell absolute rounded-[50%] h-4 w-4 flex justify-center items-center text-[10px] top-[-3px] text-white right-[-4px] bg-black">
                 5
