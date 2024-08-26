@@ -12,7 +12,7 @@ function App() {
 
   return (
     <Router >
-      <div  className={`${mode === 'dark' ? `bg-[#181818] text-white` : `bg-gray-200 text-black`} py-4 px-3 h-[100vh]`}>
+      <div  className={`${mode === 'dark' ? `bg-[#181818] text-white` : `bg-gray-200 text-black`} text-[11px] py-4 px-3 h-[100vh]`}>
         <Header />
         <main className="r">
           <Routes>
