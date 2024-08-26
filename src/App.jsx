@@ -5,6 +5,7 @@ import Resources from './pages/Resources';
 import Header from './components/Header'
 import { ModeContext } from './components/ModeContext';
 import { useContext } from 'react';
+import NotificationPage from './pages/Notifications';
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />}/>
             <Route path="ht" element={<Resources />}/>
+            <Route path='/notifications' element={<NotificationPage />}/>
           </Routes>
         </main>
       </div>
