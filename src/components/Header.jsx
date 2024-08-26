@@ -53,12 +53,10 @@ localStorage.setItem('mode', mode)
       </div>
 
       <div className="right flex items-center gap-2">
-        <div className="dark-light hover:cursor-pointer w-8 h-8 flex justify-center items-center rounded-[50%] bg-gray-300">
-            <button onClick={toDark}>
+      <button onClick={toDark}> <div className="dark-light hover:cursor-pointer w-8 h-8 flex justify-center items-center rounded-[50%] bg-gray-300">
                 <CiLight className={`${currentMode === 'dark' ? `hidden` : `block`}`}/>
                 <MdDarkMode  className={`${currentMode === 'light' ? `hidden` : `block`}`}/>
-            </button>
-        </div>
+        </div></button>
         <div className="noti w-8 h-8 hover:cursor-pointer flex justify-center items-center rounded-[50%] bg-gray-300 relative">
             <span className="bell">
             <IoMdNotificationsOutline size={22}/>
