@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { IoMdNotificationsOutline } from "react-icons/io";
 import { CiLight } from "react-icons/ci";
 import { MdDarkMode } from "react-icons/md";
@@ -15,7 +15,17 @@ const Header = () => {
 
 const { mode, toggleMode } = useContext(ModeContext);
 
-    const { user } = useUser();
+    const { user, isLoaded  } = useUser();
+    const [name, setName] = useState('')
+ 
+    useEffect(() => {
+        if (isLoaded  && user) {
+          setName(user.fullName || 'Johannes'); // Default to 'Johannes' if fullName is not available
+        }
+      }, [isLoaded , user]);
+
+
+    // console.log(theName)
 
 
   return (
@@ -32,7 +42,7 @@ const { mode, toggleMode } = useContext(ModeContext);
             <UserButton />
             <div className="greet flex text-[10px] flex-col">
             <span>Hello</span>
-            <span className="name font-bold">{user.fullName}</span>
+            <span className="name font-bold"> {name}</span>
         </div>
         </SignedIn>
        
