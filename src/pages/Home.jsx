@@ -4,7 +4,7 @@ import { useContext } from 'react';
 import { Input } from "@/components/ui/input"
 import { FaGripfire } from "react-icons/fa";
 import { Button } from '@/components/ui/button';
-import { Carousel, CarouselContent, CarouselItem } from '../components/ui/carousel'
+import { Carousel, CarouselContent, CarouselItem, CarouselNext } from '../components/ui/carousel'
 // import { Route } from 'lucide-react';
 // import { BrowserRouter as Router, Routes ,Route  } from 'react-router-dom';
 
@@ -60,7 +60,6 @@ const Home = () => {
 
             </div>
         </div> */}
-
           
 
     </div>
@@ -69,3 +68,4 @@ const Home = () => {
 }
 
 export default Home
+

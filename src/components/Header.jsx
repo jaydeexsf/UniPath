@@ -6,26 +6,36 @@ import { ModeContext } from './ModeContext';
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 // import { useState } from 'react';
+import { SignedIn, SignedOut, SignInButton, UserButton, useUser  } from "@clerk/clerk-react";
+import { Button } from './ui/button';
+
 
 const Header = () => {
 
 
 const { mode, toggleMode } = useContext(ModeContext);
 
-// useEffect(() => {
-//     localStorage.setItem('mode', mode);
-//   }, [mode]);
+    const { user } = useUser();
 
-    let current = localStorage.getItem('mode') 
 
   return (
     <div className='flex justify-between'>
       <div className="left flex items-center gap-2">
-        <span className='bg-red-300 w-10 h-10 rounded-[50%] flex items-center justify-center'>sj</span>
-        <div className="greet flex text-[10px] flex-col">
+        
+        <SignedOut>
+        <Button>
+            <SignInButton />
+            </Button>    
+        </SignedOut>
+        
+        <SignedIn>
+            <UserButton />
+            <div className="greet flex text-[10px] flex-col">
             <span>Hello</span>
-            <span className="name font-bold">Johannes Moloantoa</span>
+            <span className="name font-bold">{user.fullName}</span>
         </div>
+        </SignedIn>
+       
       </div>
 
       <div className="right flex items-center gap-2">
@@ -47,3 +57,4 @@ const { mode, toggleMode } = useContext(ModeContext);
 };
 
 export default Header
+
