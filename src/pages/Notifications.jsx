@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { IoMdNotificationsOutline } from "react-icons/io";
 import { AiOutlineCalendar, AiOutlineFileText } from "react-icons/ai";
 import { FaMoneyCheckAlt } from "react-icons/fa";
+import { CiLight } from 'react-icons/ci';
+import { MdDarkMode } from 'react-icons/md';
+import { ModeContext } from '@/components/ModeContext';
 
 // Sample notification data
 const notifications = [
@@ -30,27 +33,40 @@ const notifications = [
 ];
 
 const NotificationPage = () => {
+
+  const {mode, toggleMode} = useContext(ModeContext);
+
+
+
   return (
-    <div className="min-h-screen bg-gray-100">
-      <header className="bg-blue-600 text-white py-4">
+    <div className="min-h-screen absolute top-0 left-0">
+      <header className="bg-red-700 py-4 w-[100vw]">
         <div className="container mx-auto px-4 flex justify-between items-center">
-          <h1 className="text-2xl font-bold">Student Notifications</h1>
-          <IoMdNotificationsOutline size={28} />
+          <h1 className="text-xl font-bold">Student Notifications</h1>
+          <div className='flex items-center gap-3'>
+              <button onClick={toggleMode}> 
+                   <div className="dark-light hover:cursor-pointer w-8 h-8 flex justify-center items-center rounded-[50%] bg-gray-300">
+                    <CiLight className={`${mode === 'dark' ? `block text-black` : `hidden`}`}/>
+                    <MdDarkMode  className={`${mode === 'light' ? `block text-black` : `hidden text-black`}`}/>
+                    </div>
+              </button>
+          <IoMdNotificationsOutline className='w-6 h-6 flex justify-center items-center rounded-[50%] text-black transition skew-y-0 skew-x-10' size={16} />
+          </div>
         </div>
       </header>
 
       <main className="container mx-auto px-4 py-6">
-        <div className="bg-white rounded-lg shadow-lg">
+        <div className=" rounded-lg shadow">
           {notifications.length > 0 ? (
             <ul className="divide-y divide-gray-200">
               {notifications.map(notification => (
-                <li key={notification.id} className="p-4 hover:bg-gray-50 flex items-center gap-4">
+                <li key={notification.id} className="p-4 hover:bg-red-600 flex items-center gap-4">
                   {notification.icon}
                   <div className="flex-grow">
-                    <h2 className="text-lg font-semibold">{notification.title}</h2>
-                    <p className="text-sm text-gray-600">{notification.message}</p>
+                    <h2 className="text-sm font-semibold">{notification.title}</h2>
+                    <p className="text-[11px] text-gray-600">{notification.message}</p>
                   </div>
-                  <span className="text-sm text-gray-500">{notification.timestamp}</span>
+                  <span className="text-[8px] text-gray-500">{notification.timestamp}</span>
                 </li>
               ))}
             </ul>
