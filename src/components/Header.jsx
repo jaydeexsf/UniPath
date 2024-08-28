@@ -24,10 +24,6 @@ const { mode, toggleMode } = useContext(ModeContext);
         }
       }, [isLoaded , user]);
 
-
-    // console.log(theName)
-
-
   return (
     <div className='flex justify-between'>
       <div className="flex items-center gap-2">
