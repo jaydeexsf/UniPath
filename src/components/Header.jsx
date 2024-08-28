@@ -34,7 +34,7 @@ const { mode, toggleMode } = useContext(ModeContext);
         
         <SignedOut>
         <Button>
-            <SignInButton className="" />
+            <SignInButton className="text-2xl" />
             </Button>    
         </SignedOut>
         
