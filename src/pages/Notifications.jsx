@@ -5,6 +5,7 @@ import { FaMoneyCheckAlt } from "react-icons/fa";
 import { CiLight } from 'react-icons/ci';
 import { MdDarkMode } from 'react-icons/md';
 import { ModeContext } from '@/components/ModeContext';
+import { Link } from 'react-router-dom';
 
 // Sample notification data
 const notifications = [
@@ -35,14 +36,16 @@ const notifications = [
 const NotificationPage = () => {
 
   const {mode, toggleMode} = useContext(ModeContext);
-
+// function back () {
+//   window.location.href = 'home'
+// }
 
 
   return (
     <div className="min-h-screen absolute top-0 left-0">
-      <header className="bg-red-700 py-4 w-[100vw]">
+      <header className="bg-red-700 py-4 px-4 w-[100vw]">
         <div className="container mx-auto px-4 flex justify-between items-center">
-          <h1 className="text-xl font-bold">Student Notifications</h1>
+        <Link to="/home"><h1 className="text-xl font-bold">back</h1> </Link>
           <div className='flex items-center gap-3'>
               <button onClick={toggleMode}> 
                    <div className="dark-light hover:cursor-pointer w-8 h-8 flex justify-center items-center rounded-[50%] bg-gray-300">
