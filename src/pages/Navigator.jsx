@@ -139,7 +139,7 @@ const Navigator = () => {
     <div className={`${mode === 'light' ? 'bg-gray-200 dark' : 'bg-gray-500 light'} transition-all duration-1000 z-50 w-[100%] sticky bottom-[-0px] flex justify-around`}>
       <div className="flex-col py-2">
         <Link to="/home" onClick={() => handleIconClick('home')}>
-          <Button className={`flex-col px-4 py-7 ${clickedIcon === 'home' ? 'scale-110' : ''}`}>
+          <Button className={`flex-col px-3 py-7 ${clickedIcon === 'home' ? 'scale-110' : ''}`}>
             <div className="navIcons flex flex-col items-center">
               <GoHome className={`text-2xl ${clickedIcon === 'home' ? 'hidden' : ''}`} />
               <GoHomeFill className={`text-2xl ${clickedIcon === 'home' ? '' : 'hidden'}`} />
@@ -182,7 +182,7 @@ const Navigator = () => {
         </Link>
       </div>
 
-      <div className="flex-col px-2 py-2">
+      <div className="flex-col px-0 py-2">
         <Link to="/resources" onClick={() => handleIconClick('resources')}>
           <Button className={`flex-col py-7 ${clickedIcon === 'resources' ? 'scale-110' : ''}`}>
             <div className="navIcons flex flex-col items-center">
