@@ -30,16 +30,16 @@ const { mode, toggleMode } = useContext(ModeContext);
 
   return (
     <div className='flex justify-between'>
-      <div className="left flex items-center gap-2">
+      <div className="flex items-center gap-2">
         
         <SignedOut>
         <Button>
-            <SignInButton />
+            <SignInButton className="" />
             </Button>    
         </SignedOut>
         
         <SignedIn>
-            <UserButton />
+            <UserButton className=""/>
             <div className="greet flex text-[10px] flex-col">
             <span>Hello</span>
             <span className="name font-bold"> {name}</span>

@@ -6,7 +6,7 @@ import Header from './components/Header'
 import { ModeContext } from './components/ModeContext';
 import { useContext } from 'react';
 import NotificationPage from './pages/Notifications';
-// import Navigator from '../src/components/Navigator';
+import Navigator from './pages/Navigator';
 
 function App() {
 
@@ -16,19 +16,21 @@ function App() {
   // const shouldShowHeader = location.pathname !== '/notifications';
 
   return (
+    <div className="bf h-[100vh]">
     <Router >
       <div  className={`${mode === 'dark' ? `bg-[#050413] text-white` : `bg-gray-50 text-black`} text-[11px] py-4 px-3 h-[100%]`}>
        <Header />
-        <main className="r">
+        <main className="">
           <Routes>
             <Route path="/" element={<Home />}/>
             <Route path="ht" element={<Resources />}/>
             <Route path='/notifications' element={<NotificationPage />}/>
           </Routes>
         </main>
-        {/* <Navigator /> */}
       </div>
+      <Navigator />
     </Router>
+    </div>
   )
 }
 

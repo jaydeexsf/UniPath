@@ -4,6 +4,10 @@ import { useContext } from 'react';
 import { Input } from "@/components/ui/input"
 import { FaGripfire } from "react-icons/fa";
 import { Button } from '@/components/ui/button';
+// Import Swiper React components
+import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
+
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
 // import { Carousel, CarouselContent, CarouselItem, CarouselNext } from '../components/ui/carousel'
@@ -14,6 +18,7 @@ import { Button } from '@/components/ui/button';
 const Home = () => {
 
     const {mode} = useContext(ModeContext);
+
 
   return (
     <div className={`${mode === 'dark' ? 'light' : 'dark ' }hom dar py-6 flex flex-col gap-8`}>
@@ -66,17 +71,39 @@ const Home = () => {
 
             <div className="latestnews bg-gray-400 h-44 rounded-2xl">
                 <h1 className="text-center font-bold text-xl">Floating News</h1>
-                <div className="topnews">
-                    <div className="leftnews">
-                        <span className="arr"></span><span className="arr"></span>
-                    </div>
-                    <div className="rightnews">
-
-                    </div>
-                </div>
-                
-                <div className="bottomnews">
-                    <span></span><span></span><span></span><span></span><span></span><span></span>
+                <div className="swiper-container  bg-gray-400 h-44 rounded-2xl">
+                    <Swiper
+                        modules={[Navigation, Pagination, Scrollbar, A11y]}
+                        spaceBetween={50}
+                        slidesPerView={1}
+                        navigation={{
+                        prevEl: '.swiper-button-prev',
+                        nextEl: '.swiper-button-next',
+                        }}
+                        pagination={{ clickable: true }}
+                        scrollbar={{ draggable: true }}
+                        breakpoints={{
+                        640: {
+                            slidesPerView: 1,
+                        },
+                        768: {
+                            slidesPerView: 2,
+                        },
+                        1024: {
+                            slidesPerView: 3,
+                        },
+                        }}
+                        onSwiper={(swiper) => console.log(swiper)}
+                        onSlideChange={() => console.log('slide change')}
+                        className=""
+                    >
+                        <SwiperSlide>Slide 1</SwiperSlide>
+                        <SwiperSlide>Slide 2</SwiperSlide>
+                        <SwiperSlide>Slide 3</SwiperSlide>
+                        <SwiperSlide>Slide 4</SwiperSlide>
+                    </Swiper>
+                    <div className="swiper-button-prev"></div>
+                    <div className="swiper-button-next"></div>
                 </div>
             </div>
 
