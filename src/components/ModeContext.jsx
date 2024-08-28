@@ -8,7 +8,6 @@ export const ModeProvider = ({ children }) => {
   const toggleMode = () => {
     const newMode = mode === 'light' ? 'dark' : 'light';
     setMode(newMode);
-    // window.location.reload(); 
   };
 
   useEffect(() => {

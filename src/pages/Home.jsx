@@ -16,19 +16,19 @@ const Home = () => {
     const {mode} = useContext(ModeContext);
 
   return (
-    <div className="hom py-6 flex flex-col gap-8">
+    <div className={`${mode === 'dark' ? 'light' : 'dark ' }hom dar py-6 flex flex-col gap-8`}>
         <div className="top flex gap-4">
             <form action="">
-               <Input className="bg-red-300 border rounded-full border-red-200 focus:border-transparent w-[60vw] min-w-4 max-w-[350px]" type="search" placeholder="search..." />
+               <Input className="text-white bg-slate-800 border rounded-full focus:border-transparent w-[60vw] min-w-4 max-w-[350px]" type="search" placeholder="search..." />
             </form>
-            <div className='bg-red-500 rounded-full nowrap flex justify-center hover:cursor-pointer items-center px-4'>Get Help</div>
+            <div className='bg-slate-800 text-white rounded-full nowrap flex justify-center hover:cursor-pointer items-center px-4'>Get Help</div>
         </div>
 
-        <div className="col bg-red-500 w-[100%] flex items-end rounded-2xl px-3 py-3 h-[130px]">
+        <div className="col bg-gray-700 w-[100%] flex items-end rounded-2xl px-3 py-3 h-[130px]">
             <div className="top-upgrade w-[100%]">
                 <h1 className='text-lg font-bold'>Upgrade to Pro</h1>
                 <div className='w-[45%] font-semibold'>Get 1 month free and unlock all pro features</div>
-                <div className='flex items-center bg-red-800 w-fit px-2 rounded-sm py-[2px] font-semibold mt-3'>4.9 out of 5 <FaGripfire className='text-orange-300 ml-[2px]'/></div>
+                <Button className='flex items-center w-fit px-2 text-[10px] rounded-sm py-[0px] font-semibold mt-3'>4.9 out of 5 <FaGripfire className='text-orange-300 ml-[2px]'/></Button>
             </div>
 
             <div>
@@ -62,7 +62,36 @@ const Home = () => {
 
             </div>
         </div> */}
+        <div className="showLive">
 
+            <div className="latestnews bg-gray-400 h-44 rounded-2xl">
+                <h1 className="text-center font-bold text-xl">Floating News</h1>
+                <div className="topnews">
+                    <div className="leftnews">
+                        <span className="arr"></span><span className="arr"></span>
+                    </div>
+                    <div className="rightnews">
+
+                    </div>
+                </div>
+                
+                <div className="bottomnews">
+                    <span></span><span></span><span></span><span></span><span></span><span></span>
+                </div>
+            </div>
+
+            <div className="live">
+                <div className="lessons">
+                    <div className="leftlessons">
+
+                    </div>
+                    <div className="rightrecording">
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </div>
 
   )

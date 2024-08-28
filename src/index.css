@@ -67,3 +67,9 @@
     @apply bg-background text-foreground;
   }
 }
+
+.leftnews span {
+  background-color: red;
+  height: 30px;
+  width: 30px;
+}
