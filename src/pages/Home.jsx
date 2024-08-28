@@ -94,7 +94,7 @@ const Home = () => {
                         },
                         }}
                         onSwiper={(swiper) => console.log(swiper)}
-                        onSlideChange={() => console.log('slide change')}
+                        // onSlideChange={() => console.log('slide change')}
                         className=""
                     >
                         <SwiperSlide>Slide 1</SwiperSlide>
@@ -102,8 +102,8 @@ const Home = () => {
                         <SwiperSlide>Slide 3</SwiperSlide>
                         <SwiperSlide>Slide 4</SwiperSlide>
                     </Swiper>
-                    <div className="swiper-button-prev"></div>
-                    <div className="swiper-button-next"></div>
+                    <div className="swiper-button-prev text-white"></div>
+                    <div className="swiper-button-next text-white"></div>
                 </div>
             </div>
 

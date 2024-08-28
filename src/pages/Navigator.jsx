@@ -11,10 +11,9 @@ import { Button } from '@/components/ui/button';
 const Navigator = () => {
 
   const { mode } = useContext(ModeContext);
-  console.log(mode + 'this sied')
 
   return (
-  <div className={`${mode === `light` ? `bg-gray-200 light` : `bg-gray-500 dark` } w-[100%] sticky bottom-0 flex py-3 justify-around`}>
+  <div className={`${mode === `light` ? `bg-gray-200 dark` : `bg-gray-500 light` } w-[100%] sticky bottom-0 flex py-3 justify-around`}>
       <Button className="flex flex-col py-7"><div className="navIcons  flex flex-col items-center hover:cursor-pointer">
       <GoHome className="text-3xl "/> 
         <GoHomeFill className="hidden"/>
