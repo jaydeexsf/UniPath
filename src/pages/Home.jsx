@@ -1,9 +1,9 @@
 import React from 'react'
-import { ModeContext } from '@/components/ModeContext';
+import { ModeContext } from '../components/ModeContext';
 import { useContext } from 'react';
-import { Input } from "@/components/ui/input"
+import { Input } from "../components/ui/input"
 import { FaGripfire } from "react-icons/fa";
-import { Button } from '@/components/ui/button';
+import { Button } from '../components/ui/button';
 // Import Swiper React components
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 

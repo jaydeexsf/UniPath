@@ -1,12 +1,8 @@
-import path from "path"
-import react from "@vitejs/plugin-react"
-import { defineConfig } from "vite"
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
 
+// Replace `your-repo-name` with the actual name of your GitHub repository
 export default defineConfig({
+  base: '/UniPath/',
   plugins: [react()],
-  resolve: {
-    alias: {
-      "@": path.resolve(__dirname, "./src"),
-    },
-  },
-})
+});

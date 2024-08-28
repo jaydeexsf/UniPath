@@ -4,7 +4,7 @@ import { AiOutlineCalendar, AiOutlineFileText } from "react-icons/ai";
 import { FaMoneyCheckAlt } from "react-icons/fa";
 import { CiLight } from 'react-icons/ci';
 import { MdDarkMode } from 'react-icons/md';
-import { ModeContext } from '@/components/ModeContext';
+import { ModeContext } from '../components/ModeContext';
 import { Link } from 'react-router-dom';
 
 // Sample notification data
