@@ -50,8 +50,8 @@ const { mode, toggleMode } = useContext(ModeContext);
 
       <div className="right flex items-center gap-2">
       <button onClick={toggleMode}> <div className="dark-light hover:cursor-pointer w-8 h-8 flex justify-center items-center rounded-[50%] bg-gray-300">
-                <CiLight className={`${mode === 'dark' ? `block text-black` : `hidden`}`}/>
-                <MdDarkMode  className={`${mode === 'light' ? `block text-black` : `hidden text-black`}`}/>
+                <CiLight className={`${mode === 'dark' ? `block text-black` : `hidden`} text-lg`}/>
+                <MdDarkMode  className={`${mode === 'light' ? `block text-black` : `hidden text-black`} text-lg`}/>
         </div></button>
         <div className="noti w-8 h-8 hover:cursor-pointer flex justify-center items-center rounded-[50%] bg-gray-300 relative">
             <Link to="/notifications"><span className="bell">

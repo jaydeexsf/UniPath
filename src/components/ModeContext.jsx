@@ -8,14 +8,17 @@ export const ModeProvider = ({ children }) => {
   const toggleMode = () => {
     const newMode = mode === 'light' ? 'dark' : 'light';
     setMode(newMode);
+    localStorage.setItem('mode', mode);
   };
 
+  const ddd = localStorage.getItem('mode');
+
   useEffect(() => {
-    localStorage.setItem('mode', mode);
+  localStorage.setItem('mode', mode);
   }, [mode]);
 
   return (
-    <ModeContext.Provider value={{ mode, toggleMode }}>
+    <ModeContext.Provider value={{ mode, toggleMode, ddd }}>
       {children}
     </ModeContext.Provider>
   );
