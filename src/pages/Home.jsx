@@ -71,7 +71,7 @@ const Home = () => {
 
             <div className="latestnews bg-gray-400 h-44 rounded-2xl">
                 <h1 className="text-center font-bold text-xl">Floating News</h1>
-                <div className="swiper-container  bg-gray-400 h-44 rounded-2xl">
+                <div className="swiper-container bg-gray-400 h-44 rounded-2xl">
                     <Swiper
                         modules={[Navigation, Pagination, Scrollbar, A11y]}
                         spaceBetween={50}
@@ -81,7 +81,7 @@ const Home = () => {
                         nextEl: '.swiper-button-next',
                         }}
                         pagination={{ clickable: true }}
-                        scrollbar={{ draggable: true }}
+                        scrollbar={{ draggable: false }}
                         breakpoints={{
                         640: {
                             slidesPerView: 1,
@@ -93,7 +93,7 @@ const Home = () => {
                             slidesPerView: 3,
                         },
                         }}
-                        onSwiper={(swiper) => console.log(swiper)}
+                        // onSwiper={(swiper) => console.log(swiper)}
                         // onSlideChange={() => console.log('slide change')}
                         className=""
                     >

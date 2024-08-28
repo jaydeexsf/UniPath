@@ -70,7 +70,13 @@
 
 .swiper {
   width: 100%;
-  height: 100%;
+  height: 105%;
+  position: absolute;
+}
+
+.swiper-container {
+  position: relative;
+  overflow:hidden;
 }
 
 .latestnews {
@@ -80,7 +86,7 @@
 .swiper-button-prev, .swiper-button-next {
   position: absolute;
   top: 50%;
-  transform: translateY(30%);
+  transform: translateY(-15%);
   padding: 5px 10px;
   cursor: pointer;
 }

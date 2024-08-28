@@ -13,8 +13,8 @@ const Navigator = () => {
   const { mode } = useContext(ModeContext);
 
   return (
-  <div className={`${mode === `light` ? `bg-gray-200 dark` : `bg-gray-500 light` } w-[100%] sticky bottom-0 flex py-3 justify-around`}>
-      <Button className="flex flex-col py-7"><div className="navIcons  flex flex-col items-center hover:cursor-pointer">
+  <div className={`${mode === `light` ? `bg-gray-200 dark` : `bg-gray-500 light` } z-50 w-[100%] sticky bottom-0 flex py-3 justify-around`}>
+      <Button className="flex-col py-7"><div className="navIcons  flex flex-col items-center hover:cursor-pointer">
       <GoHome className="text-3xl "/> 
         <GoHomeFill className="hidden"/>
        <span className="iconText  text-[10px] font-semibold">Home</span>
