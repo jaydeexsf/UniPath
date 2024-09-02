@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { IoMdNotificationsOutline } from "react-icons/io";
+import { IoIosLogIn, IoMdNotificationsOutline } from "react-icons/io";
 import { CiLight } from "react-icons/ci";
 import { MdDarkMode } from "react-icons/md";
 import { ModeContext } from './ModeContext';
@@ -23,6 +23,11 @@ const { mode, toggleMode } = useContext(ModeContext);
           setName(user.fullName || 'profile'); 
         }
       }, [isLoaded ]);
+
+      if (SignedIn === true) {
+      console.log('yeyey')
+      window.location.href = '/home';
+      }
 
   return (
     <div className='flex justify-between'>

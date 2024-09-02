@@ -5,7 +5,6 @@ import { SiBookstack } from 'react-icons/si';
 import { RiGraduationCapFill } from 'react-icons/ri';
 import { GrResources } from 'react-icons/gr';
 import { ModeContext } from '../components/ModeContext';
-import { Button } from '../components/ui/button';
 import { Link } from 'react-router-dom';
 
 const Navigator = () => {
@@ -17,61 +16,42 @@ const Navigator = () => {
     localStorage.setItem('page', iconName);
   };
 
+  const activeColor = mode === 'light' ? 'text-blue-900' : 'text-gray-300';
+
   return (
-    <div className={`${mode === 'light' ? 'bg-gray-200 dark' : 'bg-gray-500 light'} transition-all duration-1000 z-50 w-[100%] sticky bottom-[-0px] flex justify-around`}>
-      <div className="flex-col py-2">
-        <Link to="/home" onClick={() => handleIconClick('home')}>
-          <Button className={`flex-col px-3 py-7 ${clickedIcon === 'home' ? 'scale-110' : ''}`}>
-            <div className="navIcons flex flex-col items-center">
-              <GoHome className={`text-2xl ${clickedIcon === 'home' ? 'hidden' : ''}`} />
-              <GoHomeFill className={`text-2xl ${clickedIcon === 'home' ? '' : 'hidden'}`} />
-              <span className="iconText text-[10px] font-semibold">Home</span>
-            </div>
-          </Button>
+    <div className={`${mode === 'light' ? 'bg-gray-200' : 'bg-gray-500'} transition-all duration-1000 z-50 w-full sticky bottom-0 flex justify-around`}>
+      <div className=" py-2">
+        <Link to="/" className='flex flex-col items-center' onClick={() => handleIconClick('home')}>
+          <GoHomeFill className={`text-2xl ${clickedIcon === 'home' ? activeColor : ''}`} />
+          <span className={`text-[12px] font-semibold ${clickedIcon === 'home' ? activeColor : ''}`}>Home</span>
         </Link>
       </div>
 
-      <div className="flex-col py-2">
-        <Link to="/news" onClick={() => handleIconClick('news')}>
-          <Button className={`flex-col px-2 py-7 ${clickedIcon === 'news' ? 'scale-110' : ''}`}>
-            <div className="navIcons flex flex-col items-center">
-              <FaRegNewspaper className="text-2xl" />
-              <span className="iconText text-[10px] font-semibold">Latest News</span>
-            </div>
-          </Button>
+      <div className="py-2">
+        <Link to="/news" className='flex flex-col items-center' onClick={() => handleIconClick('news')}>
+          <FaRegNewspaper className={`text-2xl ${clickedIcon === 'news' ? activeColor : ''}`} />
+          <span className={`text-[12px] font-semibold ${clickedIcon === 'news' ? activeColor : ''}`}>Latest News</span>
         </Link>
       </div>
 
-      <div className="flex-col py-2">
-        <Link to="/courses" onClick={() => handleIconClick('courses')}>
-          <Button className={`flex-col py-7 ${clickedIcon === 'courses' ? 'scale-110' : ''}`}>
-            <div className="navIcons flex flex-col items-center">
-              <SiBookstack className="text-2xl" />
-              <span className="iconText text-[10px] font-semibold">Courses</span>
-            </div>
-          </Button>
+      <div className="py-2">
+        <Link to="/courses" className='flex flex-col items-center ' onClick={() => handleIconClick('courses')}>
+          <SiBookstack className={`text-2xl ${clickedIcon === 'courses' ? activeColor : ''}`} />
+          <span className={`text-[12px] font-semibold ${clickedIcon === 'courses' ? activeColor : ''}`}>Courses</span>
         </Link>
       </div>
 
-      <div className="flex-col py-2">
-        <Link to="/applications" onClick={() => handleIconClick('applications')}>
-          <Button className={`flex-col px-2 py-7 ${clickedIcon === 'applications' ? 'scale-110' : ''}`}>
-            <div className="navIcons flex flex-col items-center">
-              <RiGraduationCapFill className="text-2xl" />
-              <span className="iconText text-[10px] font-semibold">Applications</span>
-            </div>
-          </Button>
+      <div className="py-2">
+        <Link to="/applications" className='flex flex-col items-center ' onClick={() => handleIconClick('applications')}>
+          <RiGraduationCapFill className={`text-2xl ${clickedIcon === 'applications' ? activeColor : ''}`} />
+          <span className={`text-[12px] font-semibold ${clickedIcon === 'applications' ? activeColor : ''}`}>Applications</span>
         </Link>
       </div>
 
-      <div className="flex-col px-0 py-2">
-        <Link to="/resources" onClick={() => handleIconClick('resources')}>
-          <Button className={`flex-col py-7 ${clickedIcon === 'resources' ? 'scale-110' : ''}`}>
-            <div className="navIcons flex flex-col items-center">
-              <GrResources className="text-2xl" />
-              <span className="iconText text-[10px] font-semibold">Resources</span>
-            </div>
-          </Button>
+      <div className="py-2">
+        <Link to="/resources" className='flex flex-col items-center ' onClick={() => handleIconClick('resources')}>
+          <GrResources className={`text-2xl ${clickedIcon === 'resources' ? activeColor : ''}`} />
+          <span className={`text-[12px] font-semibold ${clickedIcon === 'resources' ? activeColor : ''}`}>Resources</span>
         </Link>
       </div>
     </div>
@@ -79,5 +59,6 @@ const Navigator = () => {
 };
 
 export default Navigator;
+
 
 
