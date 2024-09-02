@@ -17,8 +17,15 @@ export const ModeProvider = ({ children }) => {
   localStorage.setItem('mode', mode);
   }, [mode]);
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth' // Optional: Makes the scroll smooth
+    });
+  };
+
   return (
-    <ModeContext.Provider value={{ mode, toggleMode, ddd }}>
+    <ModeContext.Provider value={{ mode, toggleMode, ddd, scrollToTop }}>
       {children}
     </ModeContext.Provider>
   );

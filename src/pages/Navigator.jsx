@@ -8,12 +8,13 @@ import { ModeContext } from '../components/ModeContext';
 import { Link } from 'react-router-dom';
 
 const Navigator = () => {
-  const { mode } = useContext(ModeContext);
+  const { mode, scrollToTop  } = useContext(ModeContext);
   const [clickedIcon, setClickedIcon] = useState(localStorage.getItem('page'));
 
   const handleIconClick = (iconName) => {
     setClickedIcon(iconName);
     localStorage.setItem('page', iconName);
+    scrollToTop();
   };
 
   const activeColor = mode === 'light' ? 'text-blue-900' : 'text-gray-300';
