@@ -8,7 +8,6 @@ import { Button } from '../components/ui/button';
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
-import UL from '../assets/images/UL.png'
 
 // Import Swiper styles
 // import { Carousel, CarouselContent, CarouselItem, CarouselNext } from '../components/ui/carousel'

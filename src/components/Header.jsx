@@ -20,9 +20,9 @@ const { mode, toggleMode } = useContext(ModeContext);
  
     useEffect(() => {
         if (isLoaded  && user) {
-          setName(user.fullName || 'Johannes'); // Default to 'Johannes' if fullName is not available
+          setName(user.fullName || 'profile'); 
         }
-      }, [isLoaded , user]);
+      }, [isLoaded ]);
 
   return (
     <div className='flex justify-between'>
@@ -30,8 +30,8 @@ const { mode, toggleMode } = useContext(ModeContext);
         
         <SignedOut>
         <Button>
-            <SignInButton className="text-2xl" />
-            </Button>    
+            <Link to='home'><SignInButton className="text-[12px]" /></Link>
+        </Button>    
         </SignedOut>
         
         <SignedIn>
