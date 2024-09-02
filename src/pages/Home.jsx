@@ -8,6 +8,7 @@ import { Button } from '../components/ui/button';
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Link } from 'react-router-dom';
 
 // Import Swiper styles
 // import { Carousel, CarouselContent, CarouselItem, CarouselNext } from '../components/ui/carousel'
@@ -149,7 +150,7 @@ const Home = () => {
 
             <div className="latestnews bg-gray-400 h-[220px] relative rounded-2xl">
                 <h1 className="text-center font-bold absolute z-[999] top-2 left-[50%] translate-x-[-50%] text-gray-300 text-xl">Latest News</h1>
-                <div className="swiper-container bg-gray-400 h-[220px] rounded-2xl">
+                <div className="swiper-container bg-gray-400 min-h-[220px] flex h-[50vw] rounded-2xl">
                     <Swiper
                         modules={[Navigation, Pagination, Scrollbar, A11y]}
                         spaceBetween={50}
@@ -176,13 +177,18 @@ const Home = () => {
                         className=""
                     >
                         {newsData.map((data, index)=> (
-                            <SwiperSlide className='relative' key={index}>
+                            <SwiperSlide className='relative flex justify-center items-center' key={index}>
                                 <div className='bg-black' >
                                     <img className='opacity-55' src={data.picture} alt={`${data.title}`} />
                                 </div>
-                                <div className="text-[14px] text-center p-6 absolute bottom-0 left-0 text-white font-bold z-[10000]">
-                                        {data.description}
+                                <div className="text-[14px] items-end justify-center flex flex-col p-6 absolute bottom-0 left-0 text-white font-bold z-[10000]">
+                                    <div className='text-center'>
+                                        <h1 className='text-xl mb-2 '>{data.title}</h1>
+                                        <span className='font-semibold text-gray-300'>{data.description}</span>
+                                    </div>
+                                    <Button className="mt- text-[11px] self-cente w-[20%]"><a target='_' href={`https://www.bing.com/search?pglt=2083&q=${data.description}`}>Read More</a></Button>
                                 </div>
+                                
                             </SwiperSlide>
                         )) 
                         }
