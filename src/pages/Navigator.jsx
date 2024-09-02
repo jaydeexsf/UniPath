@@ -20,7 +20,7 @@ const Navigator = () => {
   const activeColor = mode === 'light' ? 'text-blue-900' : 'text-gray-300';
 
   return (
-    <div className={`${mode === 'light' ? 'bg-gray-200' : 'bg-gray-500'} transition-all duration-1000 z-50 w-full sticky bottom-0 flex justify-around`}>
+    <div className={`${mode === 'light' ? 'bg-gray-200' : 'bg-gray-500'} transition-all duration-1000 z-50 w-full absolute bottom-0 flex justify-around`}>
       <div className=" py-2">
         <Link to="/" className='flex flex-col items-center' onClick={() => handleIconClick('home')}>
           <GoHomeFill className={`text-2xl ${clickedIcon === 'home' ? activeColor : ''}`} />
