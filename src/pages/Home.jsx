@@ -29,7 +29,7 @@ const Home = () => {
       "date": "2024-08-15",
       "description": "Applications for the 2024 academic year are now open at University of Limpopo. Apply before the deadline to secure your spot.",
       "picture": "./src/assets/images/UL.png",
-      "icon": "../assets/images/UL.png",
+      "icon": "../asset/images/UL.png",
       "tags": ["University", "Applications", "Deadline"],
       "details": {
         "application_deadline": "2024-12-01",
@@ -42,7 +42,7 @@ const Home = () => {
       "title": "NSFAS Applications Now Open",
       "date": "2024-08-20",
       "description": "The National Student Financial Aid Scheme (NSFAS) applications are open for the 2024 academic year. Apply now to get financial support for your studies.",
-      "picture": "https://example.com/images/nsfas.jpg",
+      "picture": "./src/assets/images/nsfas.jpg",
       "icon": "https://example.com/icons/nsfas.png",
       "tags": ["Bursary", "NSFAS", "Financial Aid"],
       "details": {
@@ -177,9 +177,9 @@ const Home = () => {
                         className=""
                     >
                         {newsData.map((data, index)=> (
-                            <SwiperSlide className='relative flex justify-center items-center' key={index}>
+                            <SwiperSlide className='relative flex justify-cente items-cente cover' key={index}>
                                 <div className='bg-black' >
-                                    <img className='opacity-55' src={data.picture} alt={`${data.title}`} />
+                                    <img className='opacity-55 ' src={data.picture} alt={`${data.title}`} />
                                 </div>
                                 <div className="text-[14px] items-end justify-center flex flex-col p-6 absolute bottom-0 left-0 text-white font-bold z-[10000]">
                                     <div className='text-center'>

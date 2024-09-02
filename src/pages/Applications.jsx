@@ -1,149 +1,156 @@
+import { Input } from '../components/ui/input'
 import React, { useState } from 'react';
 
-const ApplicationForm = () => {
+const ApplicationPage = () => {
+
+  const universities = [
+    {
+      id: 1,
+      name: 'University of Cape Town',
+      status: 'Open for Applications',
+      openingDate: '2024-09-01',
+    },
+    {
+      id: 2,
+      name: 'University of Johannesburg',
+      status: 'Opening Soon',
+      openingDate: '2024-10-15',
+    },
+    // Add more universities as needed
+  ];
+  
+
   const [formData, setFormData] = useState({
     fullName: '',
     email: '',
-    idNumber: '',
-    selectedUniversity: '',
-    documents: {
-      idDocument: null,
-      grade11Results: null,
-      grade12Results: null,
-    },
+    phone: '',
+    idDocument: null,
+    grade11Results: null,
+    grade12Results: null,
   });
+  const [selectedUniversity, setSelectedUniversity] = useState(null);
+  const [selectedCourse, setSelectedCourse] = useState('');
 
-  const universities = [
-    'University of Limpopo',
-    'University of Cape Town',
-    'University of Johannesburg',
-    'University of Pretoria',
-    'Stellenbosch University'
-    // Add more universities as necessary
-  ];
-
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
-
-  const handleFileChange = (e) => {
-    const { name, files } = e.target;
+  const handleChange = (e) => {
+    const { name, value, files } = e.target;
     setFormData({
       ...formData,
-      documents: { ...formData.documents, [name]: files[0] }
+      [name]: files ? files[0] : value,
     });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Handle form submission, like sending data to the backend
-    console.log('Form Data Submitted:', formData);
+  const handleUniversitySelect = (university) => {
+    setSelectedUniversity(university);
+  };
+
+  const handleSubmit = () => {
+    // Handle form submission logic
+    console.log('Form submitted', formData, selectedUniversity, selectedCourse);
   };
 
   return (
-    <div className="min-h-screen p-8">
-      <h1 className="text-3xl font-bold text-center text-blue-900 mb-8">University Application Form</h1>
-      <form onSubmit={handleSubmit} className="max-w-lg mx-auto bg-white p-6 rounded-lg shadow-lg">
-        <div className="mb-4">
-          <label className="block text-gray-700 font-medium mb-2" htmlFor="fullName">Full Name</label>
-          <input
-            type="text"
-            id="fullName"
-            name="fullName"
-            value={formData.fullName}
-            onChange={handleInputChange}
-            required
-            className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+    <div className="max-w-2xl mx-auto p-4">
+      <h1 className="text-2xl font-bold mb-4">University Application</h1>
+      
+      {/* Personal Information Form */}
+      <form className="space-y-4">
+        <Input 
+          type="text" 
+          name="fullName" 
+          placeholder="Full Name" 
+          value={formData.fullName} 
+          onChange={handleChange} 
+          className="input"
+        />
+        <Input 
+          type="email" 
+          name="email" 
+          placeholder="Email" 
+          value={formData.email} 
+          onChange={handleChange} 
+          className="input"
+        />
+        <Input 
+          type="tel" 
+          name="phone" 
+          placeholder="Phone Number" 
+          value={formData.phone} 
+          onChange={handleChange} 
+          className="input"
+        />
+        <div className="flex flex-col space-y-2">
+          <label className="font-semibold">Upload ID Document</label>
+          <input 
+            type="file" 
+            name="idDocument" 
+            onChange={handleChange} 
+            className="file-input"
           />
         </div>
-
-        <div className="mb-4">
-          <label className="block text-gray-700 font-medium mb-2" htmlFor="email">Email</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={formData.email}
-            onChange={handleInputChange}
-            required
-            className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+        <div className="flex flex-col space-y-2">
+          <label className="font-semibold">Upload Grade 11 Results</label>
+          <input 
+            type="file" 
+            name="grade11Results" 
+            onChange={handleChange} 
+            className="file-input"
           />
         </div>
-
-        <div className="mb-4">
-          <label className="block text-gray-700 font-medium mb-2" htmlFor="idNumber">ID Number</label>
-          <input
-            type="text"
-            id="idNumber"
-            name="idNumber"
-            value={formData.idNumber}
-            onChange={handleInputChange}
-            required
-            className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+        <div className="flex flex-col space-y-2">
+          <label className="font-semibold">Upload Grade 12 Final Results</label>
+          <input 
+            type="file" 
+            name="grade12Results" 
+            onChange={handleChange} 
+            className="file-input"
           />
         </div>
-
-        {/* File Upload Section */}
-        <div className="mb-4">
-          <label className="block text-gray-700 font-medium mb-2">Upload ID Document</label>
-          <input
-            type="file"
-            name="idDocument"
-            onChange={handleFileChange}
-            required
-            className="w-full text-sm text-gray-700 border border-gray-300 rounded-lg cursor-pointer"
-          />
-        </div>
-
-        <div className="mb-4">
-          <label className="block text-gray-700 font-medium mb-2">Upload Grade 11 Results</label>
-          <input
-            type="file"
-            name="grade11Results"
-            onChange={handleFileChange}
-            className="w-full text-sm text-gray-700 border border-gray-300 rounded-lg cursor-pointer"
-          />
-        </div>
-
-        <div className="mb-4">
-          <label className="block text-gray-700 font-medium mb-2">Upload Grade 12 Final Results</label>
-          <input
-            type="file"
-            name="grade12Results"
-            onChange={handleFileChange}
-            className="w-full text-sm text-gray-700 border border-gray-300 rounded-lg cursor-pointer"
-          />
-        </div>
-
-        {/* University Selection */}
-        <div className="mb-4">
-          <label className="block text-gray-700 font-medium mb-2">Select University</label>
-          <select
-            name="selectedUniversity"
-            value={formData.selectedUniversity}
-            onChange={handleInputChange}
-            required
-            className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-          >
-            <option value="" disabled>Select a university</option>
-            {universities.map((uni, index) => (
-              <option key={index} value={uni}>
-                {uni}
-              </option>
-            ))}
-          </select>
-        </div>
-
-        <button
-          type="submit"
-          className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
-        >
-          Submit Application
-        </button>
       </form>
+
+      {/* University Selection */}
+      <div className="mt-8">
+        <h2 className="text-xl font-bold mb-2">Select University</h2>
+        <div className="grid grid-cols-1 gap-4">
+          {universities.map((university) => (
+            <button 
+              key={university.id} 
+              onClick={() => handleUniversitySelect(university)} 
+              className={`p-4 border rounded-lg ${selectedUniversity?.id === university.id ? 'border-blue-500' : 'border-gray-300'}`}
+            >
+              <h3 className="font-semibold">{university.name}</h3>
+              <p className="text-sm">{university.status}</p>
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {/* Course Selection */}
+      {selectedUniversity && (
+        <div className="mt-8">
+          <h2 className="text-xl font-bold mb-2">Select Course</h2>
+          <input 
+            type="text" 
+            placeholder="Type or Select Course" 
+            value={selectedCourse} 
+            onChange={(e) => setSelectedCourse(e.target.value)} 
+            className="input"
+          />
+        </div>
+      )}
+
+      {/* Application Submission */}
+      {selectedCourse && (
+        <div className="mt-8">
+          <button 
+            onClick={handleSubmit} 
+            className="btn-primary"
+          >
+            Submit Application
+          </button>
+        </div>
+      )}
     </div>
   );
 };
 
-export default ApplicationForm;
+export default ApplicationPage;
