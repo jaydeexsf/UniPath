@@ -148,7 +148,7 @@ const Home = () => {
         </div> */}
         <div className="showLive">
 
-            <div className="latestnews bg-gray-400 h-[220px] relative rounded-2xl">
+            <div className="latestnews bg-gray-400 h-[50vw] relative rounded-2xl">
                 <h1 className="text-center font-bold absolute z-[999] top-2 left-[50%] translate-x-[-50%] text-gray-300 text-xl">Latest News</h1>
                 <div className="swiper-container bg-gray-400 min-h-[220px] flex h-[50vw] rounded-2xl">
                     <Swiper
