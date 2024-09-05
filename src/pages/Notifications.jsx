@@ -6,6 +6,8 @@ import { CiLight } from 'react-icons/ci';
 import { MdDarkMode } from 'react-icons/md';
 import { ModeContext } from '../components/ModeContext';
 import { Link } from 'react-router-dom';
+import { IoIosArrowRoundBack } from "react-icons/io";
+
 
 // Sample notification data
 const notifications = [
@@ -35,18 +37,17 @@ const notifications = [
 
 const NotificationPage = () => {
 
-  const {mode, toggleMode} = useContext(ModeContext);
+  const {mode, toggleMode, lastloca} = useContext(ModeContext);
 // function back () {
 //   window.location.href = 'home'
 // }
 
-const loca = document.referrer;
 
   return (
-    <div className="min-h-screen absolute top-0 left-0">
-      <header className="bg-red-700 py-4 px-4 w-[100vw]">
+    <div className="pb-16">
+      <header className="absolute top-0 left-0 bg-gray-800 py-4 px- w-[100vw]">
         <div className="container mx-auto px-4 flex justify-between items-center">
-        <Link  to="/home"><h1 className="text-xl font-bold">back</h1> </Link>
+        <Link  to={`${lastloca}`}><h1 className="text-xl font-bold"><IoIosArrowRoundBack className='text-2xl' /></h1> </Link>
           <div className='flex items-center gap-3'>
               <button onClick={toggleMode}> 
                    <div className="dark-light hover:cursor-pointer w-8 h-8 flex justify-center items-center rounded-[50%] bg-gray-300">
@@ -59,12 +60,12 @@ const loca = document.referrer;
         </div>
       </header>
 
-      <main className="container mx-auto px-4 py-6">
+      <main className="container mx-auto px-4 py-6 pb-2 h-[100vh]">
         <div className=" rounded-lg shadow">
           {notifications.length > 0 ? (
             <ul className="divide-y divide-gray-200">
               {notifications.map(notification => (
-                <li key={notification.id} className="p-4 hover:bg-red-600 flex items-center gap-4">
+                <li key={notification.id} className="p-4 hover:bg-green-400 flex items-center gap-4">
                   {notification.icon}
                   <div className="flex-grow">
                     <h2 className="text-sm font-semibold">{notification.title}</h2>

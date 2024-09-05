@@ -17,6 +17,16 @@ export const ModeProvider = ({ children }) => {
   localStorage.setItem('mode', mode);
   }, [mode]);
 
+  let lastloca = '/';
+
+  function gettingthelastpathname (){
+    const loca = window.location.href.split('/');
+     lastloca = loca.pop()
+  }
+
+
+  console.log(lastloca)
+
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -25,7 +35,7 @@ export const ModeProvider = ({ children }) => {
   };
 
   return (
-    <ModeContext.Provider value={{ mode, toggleMode, ddd, scrollToTop }}>
+    <ModeContext.Provider value={{ mode, toggleMode, ddd, scrollToTop, gettingthelastpathname, lastloca }}>
       {children}
     </ModeContext.Provider>
   );

@@ -1,3 +1,4 @@
+import { Button } from '../components/ui/button';
 import React from 'react';
 
 const Courses = () => {
@@ -50,17 +51,19 @@ const courses = [
       <h1 className="text-3xl font-bold text-center text-blue-900 mb-6">Courses</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {courses.map(course => (
-          <div key={course.id} className="bg-white shadow-md rounded-lg p-4 hover:bg-blue-50 transition-all duration-300">
-            <h2 className="text-xl font-semibold text-blue-800">{course.title}</h2>
+          <div key={course.id} className="bg-gray-900 shadow-md rounded-lg p-4 transition-all duration-300">
+            <h2 className="text-xl font-semibold text-white">{course.title}</h2>
             <p className="text-gray-700 mt-2">{course.description}</p>
             <div className="mt-4">
               <span className="text-sm font-medium text-gray-600">Category: </span>
               <span className="text-sm text-blue-700">{course.category}</span>
             </div>
-            <div className="mt-2">
-              <span className="text-sm font-medium text-gray-600">Duration: </span>
-              <span className="text-sm text-blue-700">{course.duration}</span>
+            <div className="mt-2 flex justify-between">
+              <div><span className="text-sm font-medium text-gray-600">Duration: </span>
+              <span className="text-sm text-blue-700">{course.duration}</span></div>
+              <div ><Button className='bg-gray-600 transition duration-700 text-[10px]'>Enroll</Button></div>
             </div>
+           
           </div>
         ))}
       </div>

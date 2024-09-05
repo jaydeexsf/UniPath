@@ -13,7 +13,7 @@ import { Button } from './ui/button';
 const Header = () => {
 
 
-const { mode, toggleMode } = useContext(ModeContext);
+const { mode, toggleMode, gettingthelastpathname } = useContext(ModeContext);
 
     const { user, isLoaded  } = useUser();
     const [name, setName] = useState('')
@@ -55,9 +55,9 @@ const { mode, toggleMode } = useContext(ModeContext);
                 <MdDarkMode  className={`${mode === 'light' ? `block text-black` : `hidden text-black`} text-lg`}/>
         </div></button>
         <div className="noti w-8 h-8 hover:cursor-pointer flex justify-center items-center rounded-[50%] bg-gray-300 relative">
-            <Link to="/notifications"><span className="bell">
+            <Link to="/notifications"> <button onClick={gettingthelastpathname()}> <span className="bell">
             <IoMdNotificationsOutline className={`${mode === 'light' ? `` : `block text-black`}`} size={22}/>
-            </span></Link>
+            </span> </button> </Link>
             <span className="bell absolute rounded-[50%] h-4 w-4 flex justify-center items-center text-[10px] top-[-3px] text-white right-[-4px] bg-black">
                 5
             </span>
