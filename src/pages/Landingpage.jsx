@@ -58,7 +58,7 @@ const LandingPage = () => {
       
       <footer className="bg-slate-950 text-white py-4">
         <div className="container mx-auto text-center">
-          <p>&copy; 2024 Your Website. All rights reserved.</p>
+          <p>&copy; 2024 Guidance. All rights reserved.</p>
           <div className="mt-4">
             <Link to="/about" className="mx-2">About Us</Link>
             <Link to="/services" className="mx-2">Services</Link>
