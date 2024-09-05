@@ -34,7 +34,7 @@ function App() {
        <Header />
         <main className="pb-16">
           <Routes>
-            <Route path="/" element={<Home /> }/>
+            <Route path="/UniPath" element={<Home /> }/>
             <Route path="/home" element={<Home />}/>
             <Route path="/Resources" element={<Resources />}/>
             <Route path="/applications" element={<Applications />}/>
@@ -51,7 +51,8 @@ function App() {
     <div>
       <Router>
         <Routes>
-          <Route path='/' element={<LandingPage />}/>
+          {/* <Route path='/' element={<LandingPage />}/> */}
+          <Route path='/UniPath' element={<LandingPage />}/>
         </Routes>
       </Router>
     </div>

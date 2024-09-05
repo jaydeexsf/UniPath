@@ -22,7 +22,7 @@ const Navigator = () => {
   return (
     <div className={`${mode === 'light' ? 'bg-gray-200' : 'bg-gray-500'} transition-all duration-1000 z-50 w-full fixed bottom-0 flex justify-around`}>
       <div className=" py-2">
-        <Link to="/" className='flex flex-col items-center' onClick={() => handleIconClick('home')}>
+        <Link to="/UniPath" className='flex flex-col items-center' onClick={() => handleIconClick('home')}>
           <GoHomeFill className={`text-2xl ${clickedIcon === 'home' ? activeColor : ''}`} />
           <span className={`text-[12px] font-semibold ${clickedIcon === 'home' ? activeColor : ''}`}>Home</span>
         </Link>

@@ -15,7 +15,7 @@ const LandingPage = () => {
             {/* <Link to="/contact" className="mx-2">Contact</Link> */}
             <SignedOut>
               <div className="inline-block">
-                <Link to="/signin" className="text-[12px] mx-2 rounded-sm bg-slate-700 p-2 px-5"><SignInButton /></Link>
+                <Link to="/UniPath" className="text-[12px] mx-2 rounded-sm bg-slate-700 p-2 px-5"><SignInButton /></Link>
                 {/* <Link to="/login" className="text-[12px] mx-2"><SignInButton /></Link> */}
               </div>
             </SignedOut>
