@@ -27,13 +27,14 @@ function App() {
   console.log(user)
 
   return (
+    user.isSignedIn ? 
     <div className="bf h-[100vh]">
     <Router >
       <div  className={`${mode === 'dark' ? `bg-[#050413] text-white` : `bg-gray-50 text-black`} transition-all duration-1000 text-[11px] py-4 px-3 h-fit-content`}>
        <Header />
         <main className="pb-16">
           <Routes>
-            <Route path="/" element={<LandingPage />}/>
+            <Route path="/" element={<Home /> }/>
             <Route path="/home" element={<Home />}/>
             <Route path="/Resources" element={<Resources />}/>
             <Route path="/applications" element={<Applications />}/>
@@ -45,6 +46,14 @@ function App() {
       </div>
       <Navigator />
     </Router>
+    </div> : 
+    
+    <div>
+      <Router>
+        <Routes>
+          <Route path='/' element={<LandingPage />}/>
+        </Routes>
+      </Router>
     </div>
   ) 
 } 
