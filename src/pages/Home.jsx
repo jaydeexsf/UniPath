@@ -9,6 +9,7 @@ import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Link } from 'react-router-dom';
+import fjf from "../assets/images/UL.png";
 
 // Import Swiper styles
 // import { Carousel, CarouselContent, CarouselItem, CarouselNext } from '../components/ui/carousel'
@@ -20,6 +21,45 @@ const Home = () => {
 
     const {mode} = useContext(ModeContext);
 
+    ///////////////courses data/////////////////////////////////
+    const coursesData = [
+        {
+          id: 1,
+          title: "How to Apply to University",
+          description: "A comprehensive guide on how to apply to universities, including tips on filling out applications and writing personal statements.",
+          category: "University Applications",
+          duration: "4 hours"
+        },
+        {
+          id: 2,
+          title: "Mathematics Grade 12",
+          description: "An advanced course covering all the essential topics in Grade 12 Mathematics.",
+          category: "Mathematics",
+          duration: "10 hours"
+        },
+        {
+          id: 3,
+          title: "Physical Sciences Grade 12",
+          description: "A detailed course that covers Grade 12 Physical Sciences topics with practical examples.",
+          category: "Sciences",
+          duration: "8 hours"
+        },
+        {
+          id: 4,
+          title: "English Language and Literature",
+          description: "A course focused on improving your English skills, including essay writing and literary analysis.",
+          category: "Language",
+          duration: "6 hours"
+        },
+        {
+          id: 5,
+          title: "Life Sciences Grade 12",
+          description: "An in-depth course on Grade 12 Life Sciences, covering both theory and practical aspects.",
+          category: "Sciences",
+          duration: "9 hours"
+        }
+      ];
+
     /////////////////////////// must remove this when we connect to the backend ///////////////////////////////
 
    const newsData = [
@@ -28,13 +68,13 @@ const Home = () => {
       "title": "University Applications Open for 2024",
       "date": "2024-08-15",
       "description": "Applications for the 2024 academic year are now open at University of Limpopo. Apply before the deadline to secure your spot.",
-      "picture": "./src/assets/images/UL.png",
-      "icon": "../asset/images/UL.png",
+      "picture": "https://th.bing.com/th/id/OIP.vBZAvn7tTegFFnQWqCZd2wAAAA?rs=1&pid=ImgDetMain",
+      "icon": "../assets/images/UL.png",
       "tags": ["University", "Applications", "Deadline"],
       "details": {
         "application_deadline": "2024-12-01",
         "contact_info": "admissions@xyzuniversity.edu",
-        "website": "https://xyzuniversity.edu/apply"
+        "website": "https://ul.co.za"
       }
     },
     {
@@ -100,7 +140,7 @@ const Home = () => {
 
 
   return (
-    <div className={`${mode === 'dark' ? 'light' : 'dark ' } h-[100vh] hom dar py-6 flex flex-col gap-8`}>
+    <div className={`${mode === 'dark' ? 'light' : 'dark ' } h-[100vh] hom dar py-6 px-2 flex flex-col gap-8`}>
         <div className="top flex gap-4">
             <form action="">
                <Input className="text-white bg-slate-800 border rounded-full focus:border-transparent w-[60vw] min-w-4 max-w-[350px]" type="search" placeholder="search..." />
@@ -210,6 +250,70 @@ const Home = () => {
             </div>
 
         </div>
+
+        <div className='pb-20 p-[unset]'>
+            <div className="top-courses flex justify-between">
+                <h1 className='text-xl font-bold'>Courses</h1>
+                <span className="see-courses text-blue-500 font-semibold flex justify-center items-center bg-blue-200 rounded-3xl px-3 py-1">
+                    <Link to="/courses"> See All </Link>
+                </span>
+            </div>
+
+            <div className="swiper-container bg-transparent min-h-[220px] flex h-[100px] mt-5">
+                    <Swiper
+                        modules={[Scrollbar, A11y]}
+                        spaceBetween={10}
+                        slidesPerView={2.3}
+                        navigation={{
+                        prevEl: '.swiper-button-prev',
+                        nextEl: '.swiper-button-next',
+                        }}
+                        pagination={{ clickable: true }}
+                        scrollbar={{ draggable: false }}
+                        breakpoints={{
+                        640: {
+                            slidesPerView: 2.3,
+                        },
+                        768: {
+                            slidesPerView: 2.5,
+                        },
+                        1024: {
+                            slidesPerView: 5.5,
+                        },
+                        }}
+                        // onSwiper={(swiper) => console.log(swiper)}
+                        // onSlideChange={() => console.log('slide change')}
+                        className=""
+                    >
+                      {coursesData.map((course, index) => (
+                        <SwiperSlide className='relative flex justify-center items-center cover rounded-2xl' key={index}>
+                            {/* Course image */}
+                            <div className='bg-black rounded-xl h-full overflow-hidden'>
+                            <img className='opacity-50 w-full h-full object-cover' src={fjf} alt={`${course.title}`} />
+                            </div>
+                            
+                            {/* Course details */}
+                            <div className="text-[14px] rounded-2xl items-end justify-center flex flex-col p-6 absolute bottom-0 left-0 text-white font-bold z-[10000] bg-gradient-to-t from-black to-transparent w-full h-full">
+                            <div className='text-center'>
+                                {/* Course title */}
+                                <h1 className='text-lg mb-2 font-bold'>{course.title}</h1>
+                                {/* Optional: Course description or duration */}
+                                <span className='font-semibold text-gray-300 text-sm'>{course.duration}</span> {/* Example: "4 Weeks" */}
+                            </div>
+                            {/* Enroll button */}
+                            <Button className="mt-4  text-[12px] px-7 py-2 text-gray-600 rounded-lg self-center">
+                                <a target='_blank' href={`/courses/enroll/${course.id}`}>Enroll Now</a>
+                            </Button>
+                            </div>
+                        </SwiperSlide>
+                        ))}
+
+                    </Swiper>
+                    {/* <div className="swiper-button-prev text-white"></div>
+                    <div className="swiper-button-next text-white"></div> */}
+                </div>
+        </div>
+       
     </div>
 
   )

@@ -34,8 +34,9 @@ function App() {
        <Header />
         <main className="pb-16">
           <Routes>
-            <Route path="/UniPath" element={<Home /> }/>
+            <Route path="/" element={<Home /> }/>
             <Route path="/home" element={<Home />}/>
+            <Route path="/UniPath" element={<Home />}/>
             <Route path="/Resources" element={<Resources />}/>
             <Route path="/applications" element={<Applications />}/>
             <Route path="/news" element={<News />}/>
