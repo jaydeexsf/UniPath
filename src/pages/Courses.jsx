@@ -1,5 +1,6 @@
 import { Button } from '../components/ui/button';
 import React from 'react';
+import fjf from '../assets/images/UL.png'
 
 const Courses = () => {
 //////////////////////// DAatabse will be used instead ///////////
@@ -46,12 +47,14 @@ const courses = [
 
 /////////////////////////////////////////////////////////////////
 
+// const [selectedcourse, setSelectedcourse] = useState('');
+
   return (
     <div className="p-4">
       <h1 className="text-3xl font-bold text-center text-blue-900 mb-6">Courses</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {courses.map(course => (
-          <div key={course.id} className="bg-gray-900 shadow-md rounded-lg p-4 transition-all duration-300">
+          <div key={course.id} style={{ backgroundImage: 'url(src/assets/images/UL.png)' }} className="bg-gray-900 shadow-md rounded-lg p-4 transition-all duration-300">
             <h2 className="text-xl font-semibold text-white">{course.title}</h2>
             <p className="text-gray-700 mt-2">{course.description}</p>
             <div className="mt-4">

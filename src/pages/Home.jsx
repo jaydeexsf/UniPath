@@ -251,7 +251,7 @@ const Home = () => {
 
         </div>
 
-        <div className='pb-20 p-[unset]'>
+        <div className='pb-26 h-300px'>
             <div className="top-courses flex justify-between">
                 <h1 className='text-xl font-bold'>Courses</h1>
                 <span className="see-courses text-blue-500 font-semibold flex justify-center items-center bg-blue-200 rounded-3xl px-3 py-1">
@@ -259,7 +259,7 @@ const Home = () => {
                 </span>
             </div>
 
-            <div className="swiper-container bg-transparent min-h-[220px] flex h-[100px] mt-5">
+            <div className="swiper-container bg-transparent flex h-[200px]">
                     <Swiper
                         modules={[Scrollbar, A11y]}
                         spaceBetween={10}
@@ -286,7 +286,7 @@ const Home = () => {
                         className=""
                     >
                       {coursesData.map((course, index) => (
-                        <SwiperSlide className='relative flex justify-center items-center cover rounded-2xl' key={index}>
+                        <SwiperSlide className='relative flex justify-center items-center cover rounded-2xl mt-6' key={index}>
                             {/* Course image */}
                             <div className='bg-black rounded-xl h-full overflow-hidden'>
                             <img className='opacity-50 w-full h-full object-cover' src={fjf} alt={`${course.title}`} />
@@ -312,6 +312,16 @@ const Home = () => {
                     {/* <div className="swiper-button-prev text-white"></div>
                     <div className="swiper-button-next text-white"></div> */}
                 </div>
+        </div>
+
+        <div className="apply-home">
+          <div className="apply-to-high-instutition">
+
+          </div>
+
+          <div className="apply-to-bursaries">
+            
+          </div>
         </div>
        
     </div>
