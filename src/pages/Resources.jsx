@@ -170,15 +170,15 @@ const ResourcesPage = () => {
 
   return (
     <div className="min-h-screen p-5">
-      <header className="text-center mb-8">
-        <h1 className="text-3xl font-bold text-gray-">Grade 12 Resources</h1>
-        <p className="text-lg text-gray-600">Download past papers and memoranda for your studies.</p>
+      <header className="text-cente mb-8">
+        <h1 className="text-2xl font-bold text-blue-700">Grade 12 Past Papers</h1>
+        <p className="text-md text-gray-600">Download past papers and memoranda for your studies.</p>
         {!selectedSubject ? <Input
           type="text"
           placeholder="Search subjects..."
           value={searchTerm}
           onChange={handleSearch}
-          className="mt-4 p-2 border text-gray-700 border-gray-300 rounded"
+          className=" bg-gray-700 border border-gray-600 mt-6 w-full text-gray-700 rounded"
         /> : '' }
       </header>
       <main>

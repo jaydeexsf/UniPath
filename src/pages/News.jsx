@@ -33,9 +33,9 @@ const NewsPage = () => {
 
   return (
     <div className="min-h-screen py-10 px-5">
-      <header className="text-center mb-8">
-        <h1 className="text-3xl font-bold ">Grade 12 News</h1>
-        <p className="text-lg text-gray-600">Stay updated with the latest news and resources for Grade 12 students.</p>
+      <header className="text-cente mb-8">
+        <h1 className="text-2xl font-bold  text-blue-700">Grade 12 News</h1>
+        <p className="text-md mt-2 text-gray-600">Stay updated with the latest news and resources for Grade 12 students.</p>
       </header>
       <main>
         <div className="max-w-4xl mx-auto">

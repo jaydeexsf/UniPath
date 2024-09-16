@@ -25,12 +25,11 @@ const { mode, toggleMode, gettingthelastpathname } = useContext(ModeContext);
       }, [isLoaded ]);
 
       if (SignedIn === true) {
-      console.log('yeyey')
-      window.location.href = '/home';
+      window.location.href = '/';
       }
 
   return (
-    <div className='flex justify-between'>
+    <div className='flex fixed z-[10000] top-0 left-0 w-full bg-black mt-0 py-4 px-4 justify-between'>
       <div className="flex items-center gap-2">
         
         <SignedOut>
@@ -41,7 +40,7 @@ const { mode, toggleMode, gettingthelastpathname } = useContext(ModeContext);
         
         <SignedIn>
             <UserButton className=""/>
-            <div className="greet flex text-[10px] flex-col">
+          <div className="greet flex text-[10px] text-white flex-col">
             <span>Hello</span>
             <span className="name font-bold"> {name}</span>
         </div>

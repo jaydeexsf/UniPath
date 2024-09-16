@@ -29,28 +29,28 @@ const Navigator = () => {
       </div>
 
       <div className="py-2">
-        <Link to="/news" className='flex flex-col items-center' onClick={() => handleIconClick('news')}>
+        <Link to="/UniPath/news" className='flex flex-col items-center' onClick={() => handleIconClick('news')}>
           <FaRegNewspaper className={`text-2xl ${clickedIcon === 'news' ? activeColor : ''}`} />
           <span className={`text-[12px] font-semibold ${clickedIcon === 'news' ? activeColor : ''}`}>Latest News</span>
         </Link>
       </div>
 
       <div className="py-2">
-        <Link to="/courses" className='flex flex-col items-center ' onClick={() => handleIconClick('courses')}>
+        <Link to="/UniPath/courses" className='flex flex-col items-center ' onClick={() => handleIconClick('courses')}>
           <SiBookstack className={`text-2xl ${clickedIcon === 'courses' ? activeColor : ''}`} />
           <span className={`text-[12px] font-semibold ${clickedIcon === 'courses' ? activeColor : ''}`}>Courses</span>
         </Link>
       </div>
 
       <div className="py-2">
-        <Link to="/applications" className='flex flex-col items-center ' onClick={() => handleIconClick('applications')}>
+        <Link to="/UniPath/applications" className='flex flex-col items-center ' onClick={() => handleIconClick('applications')}>
           <RiGraduationCapFill className={`text-2xl ${clickedIcon === 'applications' ? activeColor : ''}`} />
           <span className={`text-[12px] font-semibold ${clickedIcon === 'applications' ? activeColor : ''}`}>Applications</span>
         </Link>
       </div>
 
       <div className="py-2">
-        <Link to="/resources" className='flex flex-col items-center ' onClick={() => handleIconClick('resources')}>
+        <Link to="/UniPath/resources" className='flex flex-col items-center ' onClick={() => handleIconClick('resources')}>
           <GrResources className={`text-2xl ${clickedIcon === 'resources' ? activeColor : ''}`} />
           <span className={`text-[12px] font-semibold ${clickedIcon === 'resources' ? activeColor : ''}`}>Resources</span>
         </Link>

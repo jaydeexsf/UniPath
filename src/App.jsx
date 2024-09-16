@@ -13,6 +13,12 @@ import Applications from './pages/Applications';
 import LandingPage from './pages/landingpage';
 import { useUser, SignedOut } from '@clerk/clerk-react';
 
+import CalculateAPS from './components/CalculateAPS';
+import ApplyUniversity from './components/ApplyUniversity';
+import ApplyCollege from './components/ApplyCollege';
+import ApplyBursaries from './components/ApplyBursaries';
+import FilterAndSort from './components/FilterAndSort';
+
 function App() {
 
   const {mode, ddd} = useContext(ModeContext);
@@ -30,18 +36,30 @@ function App() {
     user.isSignedIn ? 
     <div className="bf h-[100vh]">
     <Router >
-      <div  className={`${mode === 'dark' ? `bg-[#050413] text-white` : `bg-gray-50 text-black`} transition-all duration-1000 text-[11px] py-4 px-3 h-fit-content`}>
-       <Header />
-        <main className="pb-16">
+      <div  className={`${mode === 'dark' ? `bg-[#050413] text-white` : `bg-gray-50 text-black`} transition-all duration-1000 text-[11px] py-0 px-0 h-fit-content`}>
+        <Header />
+        <main className="pb-16 pt-12 px-4">
           <Routes>
-            <Route path="/" element={<Home /> }/>
-            <Route path="/home" element={<Home />}/>
-            <Route path="/UniPath" element={<Home />}/>
-            <Route path="/Resources" element={<Resources />}/>
-            <Route path="/applications" element={<Applications />}/>
-            <Route path="/news" element={<News />}/>
-            <Route path="/courses" element={<Courses />}/>
-            <Route path="/notifications" element={<NotificationPage />}/>
+             {/* Home Routes */}
+            <Route path="/UniPath" element={<Home />} />
+            <Route path="/UniPath/home" element={<Home />} />
+
+            {/* Main Feature Routes */}
+            <Route path="/UniPath/resources" element={<Resources />} />
+            <Route path="/UniPath/applications" element={<Applications />} />
+            <Route path="/UniPath/news" element={<News />} />
+            <Route path="/UniPath/courses" element={<Courses />} />
+            <Route path="/UniPath/notifications" element={<NotificationPage />} />
+
+            {/* Application Navigation */}
+            <Route path="/UniPath/calculate-aps" element={<CalculateAPS />} />
+            <Route path="/UniPath/apply-university" element={<ApplyUniversity />} />
+            <Route path="/UniPath/apply-college" element={<ApplyCollege />} />
+            <Route path="/UniPath/apply-bursaries" element={<ApplyBursaries />} />
+            <Route path="/UniPath/filter-sort" element={<FilterAndSort />} />
+
+            {/* if the user goes the other routes that are not defined */}
+            {/* <Route path="*" element={<NotFound />} /> */}
           </Routes>
         </main>
       </div>

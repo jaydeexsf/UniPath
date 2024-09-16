@@ -45,9 +45,9 @@ const NotificationPage = () => {
 
   return (
     <div className="pb-16">
-      <header className="absolute top-0 left-0 bg-gray-800 py-4 px- w-[100vw]">
+      <header className="absolute top-0 left-0 bg-black py-4 px- w-[100vw]">
         <div className="container mx-auto px-4 flex justify-between items-center">
-        <Link  to={`${lastloca}`}><h1 className="text-xl font-bold"><IoIosArrowRoundBack className='text-2xl' /></h1> </Link>
+        <Link  to={`${lastloca}`}><span className="text-xl font-bold text-white"><IoIosArrowRoundBack className='text-2xl' /></span> </Link>Notifications
           <div className='flex items-center gap-3'>
               <button onClick={toggleMode}> 
                    <div className="dark-light hover:cursor-pointer w-8 h-8 flex justify-center items-center rounded-[50%] bg-gray-300">
