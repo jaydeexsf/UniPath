@@ -29,6 +29,7 @@ function App() {
 // console.log(dddd)
   //  const location = window.href.location.split('/').pop();
   // const shouldShowHeader = location.pathname !== '/notifications';
+  // i use this color before i might return to it [bg-[#050413]]
 
   console.log(user)
 
@@ -36,9 +37,9 @@ function App() {
     user.isSignedIn ? 
     <div className="bf h-[100vh]">
     <Router >
-      <div  className={`${mode === 'dark' ? `bg-[#050413] text-white` : `bg-gray-50 text-black`} transition-all duration-1000 text-[11px] py-0 px-0 h-fit-content`}>
+      <div  className={`${mode === 'dark' ? `bg-slate-950 text-white` : `bg-gray-50 text-black`} transition-all duration-1000 text-[11px] py-0 px-0 h-fit-content`}>
         <Header />
-        <main className="pb-16 pt-12 px-4">
+        <main className="pb-16 pt-12 px-0">
           <Routes>
              {/* Home Routes */}
             <Route path="/UniPath" element={<Home />} />

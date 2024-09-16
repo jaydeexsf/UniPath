@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 
 const Applications = () => {
   return (
-    <div className="text-white min-h-screen p-6">
-      <header className="flex justify-between items-center mb-8">
+    <div className="text-white min-h-screen py-8 p-6">
+      <header className="flex justify-between gap-8 mb-8">
         <h1 className="text-2xl font-bold  text-blue-700">Portal</h1>
         <nav>
           <ul className="flex space-x-4">

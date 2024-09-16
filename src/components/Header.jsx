@@ -29,7 +29,7 @@ const { mode, toggleMode, gettingthelastpathname } = useContext(ModeContext);
       }
 
   return (
-    <div className='flex fixed z-[10000] top-0 left-0 w-full bg-black mt-0 py-4 px-4 justify-between'>
+    <div className='flex fixed z-[10000] top-0 left-0 w-full bg-gray-950 mt-0 py-4 px-4 justify-between'>
       <div className="flex items-center gap-2">
         
         <SignedOut>
@@ -53,12 +53,13 @@ const { mode, toggleMode, gettingthelastpathname } = useContext(ModeContext);
                 <CiLight className={`${mode === 'dark' ? `block text-black` : `hidden`} text-lg`}/>
                 <MdDarkMode  className={`${mode === 'light' ? `block text-black` : `hidden text-black`} text-lg`}/>
         </div></button>
-        <div className="noti w-8 h-8 hover:cursor-pointer flex justify-center items-center rounded-[50%] bg-gray-300 relative">
+        <div className="noti w-8 h-8 hover:cursor-pointer flex justify-center items-center rounded-[50%] hover:bg-gray-700 bg-opacity-25 hover:p-[16px] rounded-full relative">
             <Link to="/notifications"> <button onClick={gettingthelastpathname()}> <span className="bell">
-            <IoMdNotificationsOutline className={`${mode === 'light' ? `` : `block text-black`}`} size={22}/>
+            <IoMdNotificationsOutline className='font-extrabold ' size={26}/>
             </span> </button> </Link>
-            <span className="bell absolute rounded-[50%] h-4 w-4 flex justify-center items-center text-[10px] top-[-3px] text-white right-[-4px] bg-black">
-                5
+            <span className="bell font-extralight absolute flex-row rounded-[50%] py-[0]  h-fit w-fit px-[3px] flex justify-center items-center text-[10px] top-[0px] translate-y-[18%] text-white right-[0px] bg-blue-800">
+                <span>9</span>
+                <span className='translate-y-[-5%]'>+</span>
             </span>
         </div>
       </div>

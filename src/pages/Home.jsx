@@ -140,7 +140,7 @@ const Home = () => {
 
 
   return (
-    <div className={`${mode === 'dark' ? 'light' : 'dark ' } h-[100vh] hom dar py-6 px-2 flex flex-col gap-8`}>
+    <div className={`${mode === 'dark' ? 'light' : 'dark ' } h-[100vh] hom dar py-6 px-0 pl-4 flex flex-col gap-8`}>
         <div className="top flex gap-4">
             <form action="">
                <Input className="text-white bg-slate-800 border rounded-full focus:border-transparent w-[60vw] min-w-4 max-w-[350px]" type="search" placeholder="search..." />
@@ -186,7 +186,7 @@ const Home = () => {
 
             </div>
         </div> */}
-        <div className="showLive">
+        <div className="showLive pr-4">
 
             <div className="latestnews bg-gray-400 h-[50vw] relative rounded-2xl">
                 <h1 className="text-center font-bold absolute z-[999] top-2 left-[50%] translate-x-[-50%] text-gray-300 text-xl">Latest News</h1>
@@ -254,7 +254,7 @@ const Home = () => {
         <div className='pb-26 h-300px'>
             <div className="top-courses flex justify-between">
                 <h1 className='text-xl font-bold'>Courses</h1>
-                <span className="see-courses text-blue-500 font-semibold flex justify-center items-center bg-blue-200 rounded-3xl px-3 py-1">
+                <span className="see-courses text-blue-500 font-semibold flex justify-center items-center bg-blue-200 rounded-3xl px-3 mr-4 py-1">
                     <Link to="/courses"> See All </Link>
                 </span>
             </div>

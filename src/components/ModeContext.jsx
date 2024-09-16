@@ -3,7 +3,7 @@ import React, { createContext, useState, useEffect } from 'react';
 export const ModeContext = createContext();
 
 export const ModeProvider = ({ children }) => {
-  const [mode, setMode] = useState('light');
+  const [mode, setMode] = useState('dark'); //settting the deafault mode to dark
 
   const toggleMode = () => {
     const newMode = mode === 'light' ? 'dark' : 'light';
@@ -30,7 +30,8 @@ export const ModeProvider = ({ children }) => {
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth' // Optional: Makes the scroll smooth
+      behavior: 'smooth',
+      duration: 5,
     });
   };
 

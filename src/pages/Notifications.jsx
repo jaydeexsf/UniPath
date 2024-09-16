@@ -60,7 +60,7 @@ const NotificationPage = () => {
         </div>
       </header>
 
-      <main className="container mx-auto px-4 py-6 pb-2 h-[100vh]">
+      <main className="container min-hscreen mx-auto px-4 py-6 pb-2 h-[100vh]">
         <div className=" rounded-lg shadow">
           {notifications.length > 0 ? (
             <ul className="divide-y divide-gray-200">
