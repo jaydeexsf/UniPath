@@ -85,28 +85,37 @@ const Courses = () => {
   };
 
   return (
-    <div className="p-4">
-      <h1 className="text-3xl font-bold text-center mb-6">Courses</h1>
+    <div className="p-4 py-8">
+      <h1 className="text-[30px] font-bold text-center mb-6">Courses</h1>
 
       {/* Search, Filter, and Sort Controls */}
-      <div className="flex justify-between mb-4">
+      <div className="flex justify-between gap-[5px] mb-8">
         <input
           type="text"
           placeholder="Search courses..."
-          className="p-2 border rounded"
+          className="mt-1 p-2 bg-gray-700 border border-gray-600 rounded"
           value={state.searchQuery}
           onChange={handleSearch}
         />
 
-        <select className="p-2 border rounded" value={state.selectedCategory} onChange={handleFilterCategory}>
-          <option value="All">All Categories</option>
+        <select className="mt-1 p-2 bg-gray-700 border border-gray-600 rounded" value={state.selectedCategory} onChange={handleFilterCategory}>
+          {courses.map((course)=> {
+            const [category, setCategory] = useState([course.category])
+            const [noRepeatCategory, setNonRepeatCategory] = useState()
+           
+            // console.log( [new  set(category)])
+            return (
+             <option value={course.category}></option>
+            )
+          })} 
+          {/* <option value="All">All Categories</option>
           <option value="Mathematics">Mathematics</option>
           <option value="Sciences">Sciences</option>
           <option value="University Applications">University Applications</option>
-          <option value="Language">Language</option>
+          <option value="Language">Language</option> */}
         </select>
 
-        <select className="p-2 border rounded" value={state.sortType} onChange={handleSort}>
+        <select className="mt-1 p-2 bg-gray-700 border border-gray-600 rounded" value={state.sortType} onChange={handleSort}>
           <option value="title">Sort by Title</option>
           <option value="duration">Sort by Duration</option>
         </select>
