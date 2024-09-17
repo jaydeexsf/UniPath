@@ -205,15 +205,15 @@ const Home = () => {
 
 
       {/* University Applications Section */}
-      <section className="relative bg-gradient-to-br from-gray-950 via-slate-900 to-gray-950 text-white py-16 px-8 rounded-lg shadow-lg my-12 mx-auto max-w-6xl">
+      <section className="relative bg-gradient-to-br from-gray-950 via-slate-950 to-gray-900 text-white py-16 px-8 rounded-lg shadow-lg my-12 mx-auto max-w-6xl">
   {/* Background Image */}
   <div className="absolute inset-0 opacity-5">
-    <img
+    {/* <img
       src="https://th.bing.com/th/id/OIP.2z0F_8WwB_c8AZD6gw9VsQHaHQ?rs=1&pid=ImgDetMain"
       alt="University"
       className="w-full h-full object-cover"
-    />
-    <div className="absolute inset-0 bg-black bg-opacity-60"></div>
+    /> */}
+    <div className="absolute inset-0 bg-black bg-opacity-100"></div>
   </div>
 
   {/* Content Section */}
@@ -236,22 +236,22 @@ const Home = () => {
     </p>
 
     {/* Additional Info or Features */}
-    <div className="flex flex-col md:flex-row justify-between items-start md:items-center space-y-4 md:space-y-0">
+    <div className="flex flex-col md:flex-row justify-between items-start md:items-center space-y-8 md:space-y-0">
       {/* List of Universities Open */}
-      <div className="text-sm text-gray-400 space-y-2 md:max-w-xs">
-        <p className="flex items-center">
-          <FaUniversity className="text-indigo-400 mr-2" /> Open Applications
+      <div className="text-sm w-full text-gray-400 space-y-2 ">
+        <p className="flex flex-nowrap items-center">
+          <FaUniversity className="text-indigo-400 size-10 md:text-16 mr-2" /> Open Applications
         </p>
         <p className="flex items-center">
-          <FaCheckCircle className="text-green-400 mr-2" /> Real-Time Updates
+          <FaCheckCircle className="text-green-400 size-10 mr-2" /> Real-Time Updates
         </p>
         <p className="flex items-center">
-          <FaCalendarAlt className="text-yellow-400 mr-2" /> Key Deadlines
+          <FaCalendarAlt className="text-yellow-400 size-8 mr-2" /> Key Deadlines
         </p>
       </div>
 
       {/* Image/Icon - Optional */}
-      <div className="flex-shrink-0 flex gap-[6vw]">
+      <div className="flex-shrink-0 mt-8 flex w-full justify-center gap-[6vw]">
         <img
           src="https://th.bing.com/th/id/OIP.0wLFBTqsr_bXmSrHeRTebQHaE8?w=245&h=180&c=7&r=0&o=5&pid=1.7"
           alt="Students applying"
