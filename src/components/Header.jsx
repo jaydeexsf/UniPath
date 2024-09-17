@@ -54,7 +54,7 @@ const { mode, toggleMode, gettingthelastpathname } = useContext(ModeContext);
                 <MdDarkMode  className={`${mode === 'light' ? `block text-black` : `hidden text-black`} text-lg`}/>
         </div></button>
         <div className="noti w-8 h-8 hover:cursor-pointer flex justify-center items-center rounded-[50%] hover:bg-gray-700 bg-opacity-25 hover:p-[16px] rounded-full relative">
-            <Link to="/notifications"> <button onClick={gettingthelastpathname()}> <span className="bell">
+            <Link to="/UniPath/notifications"> <button onClick={gettingthelastpathname()}> <span className="bell">
             <IoMdNotificationsOutline className='font-extrabold ' size={26}/>
             </span> </button> </Link>
             <span className="bell font-extralight absolute flex-row rounded-[50%] py-[0]  h-fit w-fit px-[3px] flex justify-center items-center text-[10px] top-[0px] translate-y-[18%] text-white right-[0px] bg-blue-800">

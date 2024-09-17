@@ -15,7 +15,7 @@ const LandingPage = () => {
             {/* <Link to="/contact" className="mx-2">Contact</Link> */}
             <SignedOut>
               <div className="inline-block">
-                <Link to="/" className="text-[12px] mx-2 rounded-sm bg-slate-700 p-2 px-5"><SignInButton /></Link>
+                <Link to="/UniPath/UniPath" className="text-[12px] mx-2 rounded-sm bg-slate-700 p-2 px-5"><SignInButton /></Link>
                 {/* <Link to="/login" className="text-[12px] mx-2"><SignInButton /></Link> */}
               </div>
             </SignedOut>
@@ -29,7 +29,7 @@ const LandingPage = () => {
             <h1 className="md:text-4xl text-3xl font-bold">Your Gateway to a Successful Future</h1>
             <p className="mt-4 text-sm md:text-lg">Guiding Grade 12 Students Through College Applications and Beyond</p>
             <div className="mt-6">
-              <Link to="/" className="bg-slate-800 border border-slate-800 border-[3px] hover:bg-opacity-80 text-white py-2 px-4 rounded mr-4"><SignInButton>Get Started</SignInButton></Link>
+              <Link to="/UniPat/UniPath" className="bg-slate-800 border border-slate-800 border-[3px] hover:bg-opacity-80 text-white py-2 px-4 rounded mr-4"><SignInButton>Get Started</SignInButton></Link>
               <Link to="/about" className="bg-transparent border-2 border-white hover:bg-white hover:text-slate-800 text-white py-2 px-4 rounded">Learn More</Link>
             </div>
           </div>

@@ -43,7 +43,7 @@ function App() {
           <Routes>
              {/* Home Routes */}
             <Route path="/UniPath" element={<Home />} />
-            <Route path="/UniPath/home" element={<Home />} />
+            <Route path="/UniPath/UniPath" element={<Home />} />
 
             {/* Main Feature Routes */}
             <Route path="/UniPath/resources" element={<Resources />} />

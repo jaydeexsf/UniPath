@@ -44,7 +44,7 @@ const NotificationPage = () => {
 
 
   return (
-    <div className="pb-16">
+    <div className="z-[999999999999999] pb-16">
       <header className="absolute top-0 left-0 bg-black py-4 px- w-[100vw]">
         <div className="container mx-auto px-4 flex justify-between items-center">
         <Link  to={`${lastloca}`}><span className="text-xl font-bold text-white"><IoIosArrowRoundBack className='text-2xl' /></span> </Link>Notifications
@@ -65,7 +65,7 @@ const NotificationPage = () => {
           {notifications.length > 0 ? (
             <ul className="divide-y divide-gray-200">
               {notifications.map(notification => (
-                <li key={notification.id} className="p-4 hover:bg-green-400 flex items-center gap-4">
+                <li key={notification.id} className="p-4 hover:bg-blue-950 flex items-center gap-4">
                   {notification.icon}
                   <div className="flex-grow">
                     <h2 className="text-sm font-semibold">{notification.title}</h2>
