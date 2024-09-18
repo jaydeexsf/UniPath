@@ -7,7 +7,17 @@ import 'swiper/swiper-bundle.css';
 import courses from '../assets/Data/CoursesData';
 import newsData from '../assets/Data/NewsData';
 import { FaCheckCircle } from 'react-icons/fa';
-import { FaInfoCircle, FaCalendarAlt } from 'react-icons/fa';
+import { FaInfoCircle, FaCalendarAlt, } from 'react-icons/fa';
+import Button1 from '../components/Button1';
+// import { IoMdDownload } from "react-icons/io";
+import { IoMdDownload, IoMdDocument, IoMdFolderOpen } from 'react-icons/io'; // Importing icons
+import { IoIosPaper } from "react-icons/io";
+import { FaFolderOpen } from "react-icons/fa";
+
+
+// import { FaBook } from "react-icons/fa";
+
+
 
 const Home = () => {
   const { mode } = useContext(ModeContext);
@@ -107,7 +117,7 @@ const Home = () => {
 
 
       {/* Courses Section */}
-      <section className="my-8 px-6">
+      <section className="my-8 px-6 w-fit overflow-x-collapse">
         <div className="flex justify-between items-center">
           <h2 className="text-2xl font-bold">Featured Courses</h2>
           <Button className="bg-blue-700 hover:bg-slate-800 text-white px-4 py-2 rounded-lg flex items-center">
@@ -121,7 +131,7 @@ const Home = () => {
             640: { slidesPerView: 2 },
             1024: { slidesPerView: 3.5 },
           }}
-          className="mt-4"
+          className="mt-4  overflow-x-collapse"
         >
           {courses.length > 0 ? (
             courses.map((course, index) => (
@@ -163,7 +173,7 @@ const Home = () => {
         <div className="absolute -top-20 -right-20 transform rotate-[20deg] z-[2] opacity-5 lg:opacity-30">
           <FaCalculator className="text-[400px] text-white" />
         </div>
-
+ 
         <div className="relative z-10 max-w-3xl mx-auto text-center">
           {/* Title */}
           <h2 className="text-2xl font-bold mb-8 -mt-16 tacking-wide leading-tight animate-fadeIn">
@@ -217,10 +227,10 @@ const Home = () => {
   </div>
 
   {/* Content Section */}
-  <div className="relative z-10">
-    <div className="flex flex-col md:flex-row justify-between items-center mb-6">
+  <div className="relative flex flex-col justify-center items-center z-10">
+    <div className="flex flex-col md:flex-row gap-6 justify-between items-center mb-6">
       {/* Title */}
-      <h2 className="text-4xl font-bold tracking-wide animate-fadeIn text-center md:text-left">
+      <h2 className="text-3xl font-bold mt-[-70px] animate-fadeIn text-center md:text-left">
         University Applications
       </h2>
 
@@ -231,7 +241,7 @@ const Home = () => {
     </div>
 
     {/* Description */}
-    <p className="text-lg text-gray-300 mb-6 leading-relaxed text-center md:text-left">
+    <p className="text-[14px] text-gray-300 mb-6 leading-relaxed text-center md:text-left">
       Discover universities with open applications and apply directly to your desired courses. Start your academic journey now.
     </p>
 
@@ -273,27 +283,67 @@ const Home = () => {
 
 
       {/* Resources Section */}
-      <section className="my-8 px-6">
-        <h2 className="text-2xl font-bold mb-4">Study Resources</h2>
+      <section className=" py-10">
+      <div className="container mx-auto text-center">
+        {/* Section Title */}
+        <h2 className="text-2xl font-bold mb-4">Matric Resources Hub</h2>
+        <p className="text-[14px] mb-6 text-gray-700">
+          Access textbooks, past papers, and more to help you succeed in Matric!
+        </p>
+
+        {/* Grid Layout for Resources */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="bg-gray-700 text-white shadow-lg p-6 rounded-lg">
-            <FaBook className="text-4xl text-green-500 mb-4" />
-            <h3 className="font-bold text-lg">Past Exam Papers</h3>
-            <p className="text-gray-300">Access past papers for better preparation.</p>
+          {/* Textbooks Section */}
+          <div className="bg-sky-900 flex flex-col items-center gap-[5px] p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow text-center">
+            <FaBook className='size-12 text-purple-700' />
+
+            <h3 className="text-xl font-semibold mb-2 text-white">
+              Download Textbooks
+            </h3>
+            <p className="text-gray-300 mb-4">
+              Find all the textbooks you need for your subjects.
+            </p>
+            <Button1
+              className="px-6 py-2 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition"
+              href="/textbooks"
+              text="Download Textbooks"
+              xmlns={<IoMdDownload />} // Using the download icon
+            />
           </div>
-          <div className="bg-gray-700 text-white shadow-lg p-6 rounded-lg">
-            <FaUniversity className="text-4xl text-green-500 mb-4" />
-            <h3 className="font-bold text-lg">University Guides</h3>
-            <p className="text-gray-300">Learn how to apply and what universities expect.</p>
+
+          {/* Past Papers Section */}
+          <div className="bg-purple-950 p-6 flex flex-col items-center rounded-lg shadow-md hover:shadow-lg transition-shadow text-center">
+           <IoIosPaper className='size-12 text-slate-900'/>
+            <h3 className="text-xl font-semibold mb-2">Past Papers & Memos</h3>
+            <p className="text-gray-400 mb-4">
+              Practice with past exam papers and check your answers.
+            </p>
+            <Button1
+              className="px-6 py-2 bg-green-500 text-white rounded-full hover:bg-green-600 transition"
+              href="/past-papers"
+              text="Access Past Papers"
+              xmlns={<IoMdDocument />} // Using a file document icon
+            /> 
           </div>
-          <div className="bg-gray-700 text-white shadow-lg p-6 rounded-lg">
-            <FaCalculator className="text-4xl text-green-500 mb-4" />
-            <h3 className="font-bold text-lg">APS Calculator</h3>
-            <p className="text-gray-300">Calculate your APS for different courses.</p>
+
+          {/* Subject Resources Section */}
+          <div className="bg-slate-900 p-6 flex flex-col items-center  rounded-lg shadow-md hover:shadow-lg transition-shadow text-center">
+            <FaFolderOpen className='size-12 text-center text-purple-700' />
+            <h3 className="text-xl font-semibold mb-2">Subject Resources</h3>
+            <p className="text-gray-400 mb-4">
+              Get additional materials for your subjects.
+            </p>
+            <Button1
+              className="px-6 py-2 bg-purple-500 text-white rounded-full hover:bg-purple-600 transition"
+              href="/subject-resources"
+              text="View Resources"
+              xmlns={<IoMdFolderOpen />} // Using a folder open icon
+            />
           </div>
         </div>
-      </section>
-
+      </div>
+    </section>
+  
       {/* Footer */}
       {/* <footer className="bg-gray-900 text-gray-400 py-8 px-6 text-center">
         <p>&copy; 2024 Guidance | All Rights Reserved</p>

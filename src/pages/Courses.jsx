@@ -104,7 +104,7 @@ const Courses = () => {
 
   return (
     <div className="px-8 sm:px-6 py-8">
-      <h1 className="text-[30px] font-bold text-center text-blue-700 mb-6">Courses</h1>
+      <h1 className="text-[30px] font-bold text-center mb-6">Courses</h1>
 
       {/* Search, Filter, and Sort Controls */}
       <div className="flex justify-between gap-[5px] mb-8">

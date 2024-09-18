@@ -171,7 +171,7 @@ const ResourcesPage = () => {
   return (
     <div className="min-h-screen p-5">
       <header className="text-cente mb-8">
-        <h1 className="text-2xl font-bold text-blue-700">Grade 12 Past Papers</h1>
+        <h1 className="text-2xl font-bold ">Grade 12 Past Papers</h1>
         <p className="text-md text-gray-600">Download past papers and memoranda for your studies.</p>
         {!selectedSubject ? <Input
           type="text"

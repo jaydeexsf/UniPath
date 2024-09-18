@@ -29,7 +29,7 @@ const { mode, toggleMode, gettingthelastpathname } = useContext(ModeContext);
       }
 
   return (
-    <div className='flex fixed z-[10000] top-0 left-0 w-full bg-gray-950 mt-0 py-4 px-4 justify-between'>
+    <div className='flex fixed z-[10000] top-0 left-0 w-[98vw] sm:w-full bg-gray-950 mt-0 py-4 px-4 justify-between'>
       <div className="flex items-center gap-2">
         
         <SignedOut>
